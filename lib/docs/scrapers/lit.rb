@@ -1,5 +1,7 @@
 module Docs
   class Lit < UrlScraper
+    include MultipleBaseUrls
+
     self.name = 'Lit'
     self.slug = 'lit'
     self.type = 'lit'
@@ -34,7 +36,7 @@ module Docs
 
     version '3' do
       self.release = '3.3.1'
-      self.base_url = 'https://lit.dev/docs/'
+      self.base_urls = ['https://lit.dev/docs/', 'https://lit.dev/articles/lit-cheat-sheet/']
       options[:skip_patterns] = [/v\d+\//]
     end
 
